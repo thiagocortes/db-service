@@ -1,0 +1,25 @@
+server:
+   port: 8082
+spring:
+    application:
+        name: db-service
+    jmx:
+      default-domain: db-service
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+      hibernate:
+        ddl-auto: update
+        naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+      show-sql: true
+      properties:
+         hibernate:
+            format_sql: true
+            type: trace 
+            temp:
+               use_jdbc_metadata_defaults: false
+    datasource:
+      url: jdbc:postgresql://localhost:5432/db-service
+      driver-class-name: org.postgresql.Driver
+      username: postgres
+      password: admin
+
